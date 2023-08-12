@@ -2,6 +2,14 @@
 
 namespace ListOne
 {
+	/// <summary>
+	/// first name 
+	/// last name
+	/// age
+	/// preferences
+	/// data arrival
+	/// data departure
+	/// </summary>
 	internal class Person
 	{
 		private string firstName;
