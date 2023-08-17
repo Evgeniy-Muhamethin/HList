@@ -4,7 +4,7 @@
 	{
 		static void Main(string[] args)
 		{
-			CommandClass mainClass = new CommandClass();
+			MainClass mainClass = new MainClass();
 			mainClass.Start();
 			mainClass.Update();
 		}

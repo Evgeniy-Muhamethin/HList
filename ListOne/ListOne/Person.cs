@@ -26,6 +26,8 @@ namespace ListOne
 		public DateTime DateArrival { get {  return dateArrival; } set {  dateArrival = value; } }
 		public DateTime DateDeparture { get {  return dateDeparture; } set { dateDeparture = value; } }
 
+		public Person() { }
+
 		public Person(string firstName, string lastName, byte age, string preferences, 
 			DateTime dateArrival, DateTime dataDeparture) 
 		{ 

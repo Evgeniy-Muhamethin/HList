@@ -1,0 +1,15 @@
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.csproj.AssemblyReference.cache
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.AssemblyInfoInputs.cache
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.AssemblyInfo.cs
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.csproj.CoreCompileInputs.cache
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\bin\Debug\net6.0\ListOne.exe
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\bin\Debug\net6.0\ListOne.deps.json
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\bin\Debug\net6.0\ListOne.runtimeconfig.json
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\bin\Debug\net6.0\ListOne.dll
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\bin\Debug\net6.0\ListOne.pdb
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.dll
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\refint\ListOne.dll
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.pdb
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.genruntimeconfig.cache
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ref\ListOne.dll
