@@ -1,0 +1,5 @@
+ada
+wong
+30
+walking
+Date arrival - 22.09.2023 0:00:00, Date departure - 24.09.2023 0:00:00

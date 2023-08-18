@@ -23,7 +23,8 @@
 			{
 				"create file",
 				"clear",
-				"add person"
+				"add person",
+				"open file"
 			};
 
 			if (commands == commandsArray[0])
@@ -59,13 +60,23 @@
 				int dayDeparture = int.Parse(Console.ReadLine());
 				dateDeparture = new DateTime(yearDeparture, monthDeparture, dayDeparture);
 				person = new Person(firstName, lastName, age, preferences, dateArrival, dateDeparture);
+				_list.Add(person);
 
 				Console.WriteLine("Enter name file");
 				string nameFile = Console.ReadLine();
 				sw = new StreamWriter($"{nameFile}.txt", false);
 				sw.WriteLine($"{person.FirstName}\n{person.LastName}\n{person.Age}\n{person.Preferences}\n" +
-					$"Date arrival - {person.DateArrival}, Date departure - {person.DateDeparture}");
+					$"Date arrival - {person.DateArrival}, Date departure - {person.DateDeparture}",false);
+				sw.Close();
 			}
+			else if (commands == commandsArray[3])
+			{
+				Console.WriteLine("Enter name file");
+				string nameFile = Console.ReadLine();
+				sr = new StreamReader($"{nameFile}.txt", true);
+				string text = sr.ReadToEnd();
+                Console.WriteLine($"Data person - {text}");
+            }
 		}
 	}
 }
