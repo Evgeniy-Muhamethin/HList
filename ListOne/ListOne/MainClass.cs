@@ -6,77 +6,95 @@
 
 		List<Person> _list;
 
+		int width = 30;
+		int height = 30;
+
 		public void Start()
 		{
 			_list = new List<Person>();
+			Console.SetWindowSize(width, height);
 		}
 
 		public void Update()
 		{
-            Console.WriteLine("Enter command");
-            string commands = Console.ReadLine();
-
-			StreamWriter sw;
-			StreamReader sr;
-
 			string[] commandsArray = new string[]
 			{
 				"create file",
 				"clear",
 				"add person",
-				"open file"
+				"open file",
+				"exit"
 			};
-
-			if (commands == commandsArray[0])
+            
+			StreamWriter sw;
+			StreamReader sr;
+			bool flag = false;
+			while (flag != true)
 			{
-				Console.WriteLine("Enter name file");
-				string nameFile = Console.ReadLine();
-				sw = new StreamWriter($"{nameFile}.txt", true);
-				sw.Close();
+				try
+				{
+					Console.WriteLine("Enter command");
+					string commands = Console.ReadLine();
+					if (commands == commandsArray[0])
+					{
+						Console.WriteLine("Enter name file");
+						string nameFile = Console.ReadLine();
+						sw = new StreamWriter($"{nameFile}.txt", true);
+						sw.Close();
+					}
+					else if (commands == commandsArray[2])
+					{
+						Person person;
+						Console.WriteLine("Enter first name");
+						string firstName = Console.ReadLine();
+						Console.WriteLine("Enter last name");
+						string lastName = Console.ReadLine();
+						Console.WriteLine("Enter age person");
+						byte age = byte.Parse(Console.ReadLine());
+						Console.WriteLine("Enter preferences");
+						string preferences = Console.ReadLine();
+						Console.WriteLine("Enter data arrival (year, month, day)");
+
+						DateTime dateArrival;
+						int yearArrival = int.Parse(Console.ReadLine());
+						int monthArrival = int.Parse(Console.ReadLine());
+						int dayArrival = int.Parse(Console.ReadLine());
+						dateArrival = new DateTime(yearArrival, monthArrival, dayArrival);
+
+						Console.WriteLine("Enter data arrival (year, month, day)");
+						DateTime dateDeparture;
+						int yearDeparture = int.Parse(Console.ReadLine());
+						int monthDeparture = int.Parse(Console.ReadLine());
+						int dayDeparture = int.Parse(Console.ReadLine());
+						dateDeparture = new DateTime(yearDeparture, monthDeparture, dayDeparture);
+						person = new Person(firstName, lastName, age, preferences, dateArrival, dateDeparture);
+						_list.Add(person);
+
+						Console.WriteLine("Enter name file");
+						string nameFile = Console.ReadLine();
+						sw = new StreamWriter($"{nameFile}.txt", false);
+						sw.WriteLine($"{person.FirstName}\n{person.LastName}\n{person.Age}\n{person.Preferences}\n" +
+							$"Date arrival - {person.DateArrival}, Date departure - {person.DateDeparture}", false);
+						sw.Close();
+					}
+					else if (commands == commandsArray[3])
+					{
+						Console.WriteLine("Enter name file");
+						string nameFile = Console.ReadLine();
+						sr = new StreamReader($"{nameFile}.txt", true);
+						string text = sr.ReadToEnd();
+						Console.WriteLine($"Data person - {text}");
+					}
+					else if (commands == commandsArray[4])
+					{
+						flag = true;
+					}
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(ex.Message);;
+				}
 			}
-			else if (commands == commandsArray[2])
-			{
-				Person person;
-                Console.WriteLine("Enter first name");
-				string firstName = Console.ReadLine();
-				Console.WriteLine("Enter last name");
-				string lastName = Console.ReadLine();
-				Console.WriteLine("Enter age person");
-				byte age = byte.Parse(Console.ReadLine());
-				Console.WriteLine("Enter preferences");
-				string preferences = Console.ReadLine();
-				Console.WriteLine("Enter data arrival (year, month, day)");
-				
-				DateTime dateArrival;
-                int yearArrival = int.Parse(Console.ReadLine());
-				int monthArrival = int.Parse(Console.ReadLine());
-				int dayArrival = int.Parse(Console.ReadLine());
-				dateArrival = new DateTime(yearArrival, monthArrival, dayArrival);
-
-				Console.WriteLine("Enter data arrival (year, month, day)");
-				DateTime dateDeparture;
-				int yearDeparture = int.Parse(Console.ReadLine());
-				int monthDeparture = int.Parse(Console.ReadLine());
-				int dayDeparture = int.Parse(Console.ReadLine());
-				dateDeparture = new DateTime(yearDeparture, monthDeparture, dayDeparture);
-				person = new Person(firstName, lastName, age, preferences, dateArrival, dateDeparture);
-				_list.Add(person);
-
-				Console.WriteLine("Enter name file");
-				string nameFile = Console.ReadLine();
-				sw = new StreamWriter($"{nameFile}.txt", false);
-				sw.WriteLine($"{person.FirstName}\n{person.LastName}\n{person.Age}\n{person.Preferences}\n" +
-					$"Date arrival - {person.DateArrival}, Date departure - {person.DateDeparture}",false);
-				sw.Close();
-			}
-			else if (commands == commandsArray[3])
-			{
-				Console.WriteLine("Enter name file");
-				string nameFile = Console.ReadLine();
-				sr = new StreamReader($"{nameFile}.txt", true);
-				string text = sr.ReadToEnd();
-                Console.WriteLine($"Data person - {text}");
-            }
 		}
 	}
 }
