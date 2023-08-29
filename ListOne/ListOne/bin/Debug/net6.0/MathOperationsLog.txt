@@ -1,0 +1,8 @@
+﻿count result operations = 2147483623,
+time was executed = -00:00:04.2312736
+count result operations = 2147483623,
+time was executed = -00:00:04.2534094
+count result operations = 2147483623,
+time was executed = -00:00:04.2292707
+count result operations = 2147483623,
+time was executed = -00:00:04.2036477

@@ -1,12 +1,10 @@
-﻿namespace ListOne
+﻿using System.Text;
+using System.Text.Encodings;
+
+namespace ListOne
 {
 	internal class MathOperations
 	{
-		public void StartMathOperation()
-		{
-
-		}
-
 		public void UpdateMathOperation()
 		{
 			//Вызываю метод асинхронного выполнения операции 
@@ -34,8 +32,13 @@
 			}
 			DateTime dateTimeStop = DateTime.Now;
 			var timeOperations = dateTimeStart - dateTimeStop;
-            Console.WriteLine($"Count result = {countResult}\n" +
-				$"Time {timeOperations}");
+			using (var sw = new StreamWriter("MathOperationsLog.txt",true, Encoding.UTF8))
+			{
+				sw.WriteLine($"count result operations = {countResult},\n" +
+					$"time was executed = {timeOperations}");
+			}
+			Console.WriteLine($"Count result = {countResult}\n" +
+					$"Time {timeOperations}");
         }
 	}
 }

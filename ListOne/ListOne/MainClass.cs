@@ -3,6 +3,7 @@
 	internal class MainClass
 	{
 		private Person _person;
+		private MathOperations _mathOperations;
 
 		List<Person> _list;
 
@@ -12,6 +13,7 @@
 		public void Start()
 		{
 			_list = new List<Person>();
+			_mathOperations = new MathOperations();
 			Console.SetWindowSize(width, height);
 		}
 
@@ -20,6 +22,7 @@
 			string[] commandsArray = new string[]
 			{
 				"create file",
+				"start operations",
 				"clear",
 				"add person",
 				"open file",
@@ -42,7 +45,15 @@
 						sw = new StreamWriter($"{nameFile}.txt", true);
 						sw.Close();
 					}
+					else if (commands == commandsArray[1])
+					{
+						_mathOperations.UpdateMathOperation();
+					}
 					else if (commands == commandsArray[2])
+					{
+						Console.Clear();
+					}
+					else if (commands == commandsArray[3])
 					{
 						Person person;
 						Console.WriteLine("Enter first name");
@@ -77,7 +88,7 @@
 							$"Date arrival - {person.DateArrival}, Date departure - {person.DateDeparture}", false);
 						sw.Close();
 					}
-					else if (commands == commandsArray[3])
+					else if (commands == commandsArray[4])
 					{
 						Console.WriteLine("Enter name file");
 						string nameFile = Console.ReadLine();
@@ -85,7 +96,7 @@
 						string text = sr.ReadToEnd();
 						Console.WriteLine($"Data person - {text}");
 					}
-					else if (commands == commandsArray[4])
+					else if (commands == commandsArray[5])
 					{
 						flag = true;
 					}

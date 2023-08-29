@@ -12,3 +12,4 @@ E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\refint\Lis
 E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.pdb
 E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.genruntimeconfig.cache
 E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ref\ListOne.dll
+E:\Programming\GitRepositoring\HList\ListOne\ListOne\obj\Debug\net6.0\ListOne.sourcelink.json
